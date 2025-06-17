@@ -31,6 +31,7 @@ glClearColor(...)	배경색 설정
 📌 핵심 코드 예시
 
 void drawWireTeapot() {
+
     glPushMatrix();
     
     glRotatef(rotationAngle, 0.0f, 1.0f, 0.0f); // Y축 회전
@@ -44,6 +45,7 @@ void drawWireTeapot() {
 }
 
 void update(int value) {
+
     rotationAngle += 1.0f;
     
     if (rotationAngle >= 360.0f)
