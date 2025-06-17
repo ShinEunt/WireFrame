@@ -14,6 +14,7 @@ Y축 기준으로 주전자가 회전함
 
 
 🧩 주요 코드 설명
+
 glutWireTeapot(0.5)	크기 0.5의 와이어프레임 주전자 렌더링
 
 glRotatef(...)	Y축 회전 적용 (애니메이션용)
@@ -28,18 +29,32 @@ glClearColor(...)	배경색 설정
 
 
 📌 핵심 코드 예시
+
 void drawWireTeapot() {
+
     glPushMatrix();
+    
     glRotatef(rotationAngle, 0.0f, 1.0f, 0.0f); // Y축 회전
+    
     glColor3f(0.0f, 1.0f, 1.0f); // 청록색
+    
     glutWireTeapot(0.5); // 와이어프레임 주전자
+    
     glPopMatrix();
+    
 }
 
 void update(int value) {
+
     rotationAngle += 1.0f;
+    
     if (rotationAngle >= 360.0f)
+    
         rotationAngle -= 360.0f;
+        
     glutPostRedisplay();
+    
     glutTimerFunc(16, update, 0);
+    
 }
+
